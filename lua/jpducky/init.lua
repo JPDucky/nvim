@@ -13,6 +13,13 @@ if not packer_exists then
     vim.api.nvim_command('PackerSync')
 end
 
+local needs_packer_sync = vim.fn.glob(vim.fn.stdpath('config') .. '/.needs_packer_sync')
+if needs_packer_sync ~= '' then
+    vim.api.nvim_echo({{'Running PackerSync', 'Type'}}, true, {})
+    vim.api.nvim_command('PackerSync')
+    vim.fn.system({'rm', vim.fn.stdpath('config') .. '/.needs_packer_sync'})
+end
+
 vim.api.nvim_exec(
     [[
     augroup Packer
