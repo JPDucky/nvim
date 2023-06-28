@@ -8,6 +8,9 @@ if not packer_exists then
     vim.api.nvim_echo({{'Installing packer.nvim', 'Type'}}, true, {})
     vim.fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
     vim.api.nvim_command('packadd packer.nvim')
+
+    -- run packersync to install
+    vim.api.nvim_command('PackerSync')
 end
 
 vim.api.nvim_exec(
