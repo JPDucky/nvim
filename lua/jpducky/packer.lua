@@ -46,5 +46,5 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme gruvbox')
         end,
     })
-vim.cmd('colorscheme rose-pine')
+vim.cmd('colorscheme gruvbox')
 end)
