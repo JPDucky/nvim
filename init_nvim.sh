@@ -2,3 +2,4 @@
 
 # this script sets up the neovim config
 nvim -c "lua require('jpducky')" -c quit
+nvim -c "PackerSync" -c quit
